@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion - CryptoInvest</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <nav>
+        <div class="logo">
+            <h1>Crypto<span>Invest</span></h1>
+        </div>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="market.html">Marché</a></li>
+            <li><a href="learn.html">Apprendre</a></li>
+        </ul>
+        <div class="nav-button">
+            <a href="login.html" class="login-btn">Connexion</a>
+            <a href="signup.html" class="sign-btn">Inscription</a>
+        </div>
+    </nav>
+</header>
+
+
+    <section class="login-section" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 8rem 2rem;">
+        <div class="login-container" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 3rem; width: 100%; max-width: 400px;">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem; background: linear-gradient(45deg, var(--accent-color), #4facfe); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Connexion</h2>
+            
+            <form class="login-form">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--text-color);">Email</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-color);">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="password" style="display: block; margin-bottom: 0.5rem; color: var(--text-color);">Mot de passe</label>
+                    <input type="password" id="password" required style="width: 100%; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-color);">
+                </div>
+                
+                <div class="form-options" style="display: flex; justify-content: space-between; margin-bottom: 2rem;">
+                    <label style="color: var(--text-secondary);">
+                        <input type="checkbox"> Se souvenir de moi
+                    </label>
+                    <a href="#" style="color: var(--accent-color); text-decoration: none;">Mot de passe oublié ?</a>
+                </div>
+                
+                <button type="submit" style="width: 100%; padding: 1rem; border: none; border-radius: 8px; background: linear-gradient(45deg, var(--accent-color), #4facfe); color: var(--primary-color); font-weight: 600; cursor: pointer; transition: transform 0.3s ease;">Se connecter</button>
+            </form>
+            
+            <div class="social-login" style="margin-top: 2rem; text-align: center;">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Ou connectez-vous avec</p>
+                <div class="social-buttons" style="display: flex; gap: 1rem; justify-content: center;">
+                    <button style="padding: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-color);"><i class="fab fa-google"></i></button>
+                    <button style="padding: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-color);"><i class="fab fa-facebook"></i></button>
+                    <button style="padding: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-color);"><i class="fab fa-apple"></i></button>
+                </div>
+            </div>
+            <br>
+            Pas encore de compte ? <a href="signup.html" style="color: var(--accent-color); text-decoration: none;">Inscrivez-vous</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <h2 class="footer-logo">Crypto<span>Invest</span></h2>
+                <p class="footer-description">
+                    Votre partenaire de confiance pour l'investissement en cryptomonnaies. 
+                    Sécurité, transparence et innovation.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="market.html">Marché</a></li>
+                    <li><a href="learn.html">Formation</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="news.html">Actualités</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Ressources</h3>
+                <ul>
+                    <li><a href="#">Centre d'aide</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">API</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@cryptoinvest.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+33 1 23 45 67 89</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Paris, France</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 CryptoInvest. Tous droits réservés.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/hambuger.js"></script>
+</body>
+</html>

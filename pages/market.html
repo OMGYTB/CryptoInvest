@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marché - CryptoInvest</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/market.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Crypto<span>Invest</span></h1>
+            </div>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="market.html">Marché</a></li>
+                <li><a href="learn.html">Apprendre</a></li>
+            </ul>
+            <div class="nav-button">
+                <a href="login.html" class="login-btn">Connexion</a>
+                <a href="signup.html" class="sign-btn">Inscription</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="market-page">
+        <section class="market-header">
+            <h1>Marché des Cryptomonnaies</h1>
+            <div class="market-stats">
+                <div class="stat-card">
+                    <h3>Capitalisation Totale</h3>
+                    <p id="total-market-cap">Chargement...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Volume 24h</h3>
+                    <p id="total-volume">Chargement...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Dominance BTC</h3>
+                    <p id="btc-dominance">Chargement...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="market-controls">
+            <div class="search-filter">
+                <input type="text" id="crypto-search" placeholder="Rechercher une cryptomonnaie...">
+                <select id="market-sort">
+                    <option value="market_cap_desc">Cap. Market ↓</option>
+                    <option value="market_cap_asc">Cap. Market ↑</option>
+                    <option value="price_desc">Prix ↓</option>
+                    <option value="price_asc">Prix ↑</option>
+                    <option value="volume_desc">Volume ↓</option>
+                    <option value="volume_asc">Volume ↑</option>
+                </select>
+            </div>
+            <div class="view-options">
+                <button class="view-btn active" data-view="table">
+                    <i class="fas fa-table"></i> Tableau
+                </button>
+                <button class="view-btn" data-view="grid">
+                    <i class="fas fa-th"></i> Grille
+                </button>
+            </div>
+        </section>
+
+        <section class="market-data">
+            <div class="table-view active" id="market-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nom</th>
+                            <th>Prix</th>
+                            <th>24h %</th>
+                            <th>7j %</th>
+                            <th>Cap. Market</th>
+                            <th>Volume (24h)</th>
+                            <th>Circulation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="market-table-body">
+                        <!-- Données injectées via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-view" id="market-grid">
+                <!-- Données injectées via JavaScript -->
+            </div>
+
+            <div class="pagination">
+                <button id="prev-page" disabled>
+                    <i class="fas fa-chevron-left"></i> Précédent
+                </button>
+                <span id="page-info">Page 1 sur 10</span>
+                <button id="next-page">
+                    Suivant <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="market-charts">
+            <h2>Graphiques du Marché</h2>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Dominance des Cryptomonnaies</h3>
+                    <canvas id="dominance-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Volume Global</h3>
+                    <canvas id="volume-chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="market-heatmap">
+            <h2>Heatmap du Marché</h2>
+            <div class="heatmap-controls">
+                <select id="heatmap-timeframe">
+                    <option value="24h">24 heures</option>
+                    <option value="7d">7 jours</option>
+                    <option value="30d">30 jours</option>
+                </select>
+            </div>
+            <div id="market-heatmap-container">
+                <!-- Heatmap injecté via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+    <!-- Vagues animées -->
+    <div class="footer-waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    
+    <!-- Contenu principal du footer -->
+    <div class="footer-content">
+        <!-- Section marque -->
+        <div class="footer-section brand">
+            <h2 class="footer-logo">Crypto<span>Invest</span></h2>
+            <p class="footer-description">
+                Votre partenaire de confiance pour l'investissement en cryptomonnaies. 
+                Découvrez, apprenez et investissez en toute sécurité.
+            </p>
+            <div class="footer-social">
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Section Produits -->
+        <div class="footer-section">
+            <h3>Produits</h3>
+            <ul>
+                <li><a href="market.html">Trading</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="learn.html">Formation</a></li>
+                <li><a href="#">Pro Trading</a></li>
+            </ul>
+        </div>
+
+        <!-- Section Support -->
+        <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Centre d'aide</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Statut API</a></li>
+                <li><a href="#">Communauté</a></li>
+            </ul>
+        </div>
+
+        <!-- Section Newsletter -->
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p class="newsletter-desc">Restez informé des dernières actualités et opportunités crypto</p>
+            <form class="footer-newsletter">
+                <div class="newsletter-input-group">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@cryptoinvest.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Paris, France</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <div class="footer-bottom-left">
+                <p>&copy; 2024 CryptoInvest. Tous droits réservés.</p>
+            </div>
+            <div class="footer-bottom-right">
+                <a href="#">Mentions légales</a>
+                <a href="#">Confidentialité</a>
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/market.js"></script>
+    <script src="../js/hambuger.js"></script>
+</body>
+
+</html>

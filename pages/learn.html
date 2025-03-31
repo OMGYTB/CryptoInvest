@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprendre - CryptoInvest</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/learn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Crypto<span>Invest</span></h1>
+            </div>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="market.html">Marché</a></li>
+                <li><a href="learn.html">Apprendre</a></li>
+            </ul>
+            <div class="nav-button">
+                <a href="login.html" class="login-btn">Connexion</a>
+                <a href="signup.html" class="sign-btn">Inscription</a>
+            </div>
+        </nav>
+    </header>
+
+        <section class="learn-hero">
+    <div class="hero-particles" id="particles-js"></div>
+    <div class="learn-hero-content">
+        <h1 class="glitch" data-text="Centre d'Apprentissage Crypto">Centre d'Apprentissage Crypto</h1>
+        <p class="fade-in">Maîtrisez l'univers des cryptomonnaies à votre rythme</p>
+        <div class="search-container">
+            <input type="text" placeholder="Rechercher un sujet, un cours, une ressource...">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="learning-paths">
+    <h2 class="section-title">Parcours <span>d'Apprentissage</span></h2>
+    <div class="paths-grid">
+        <!-- Carte Débutant -->
+        <div class="path-card" data-aos="fade-up">
+            <div class="path-level">Niveau 1</div>
+            <div class="path-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Débutant</h3>
+            <p>Découvrez les fondamentaux des cryptomonnaies</p>
+            <div class="path-progress">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+                <span>0% complété</span>
+            </div>
+            <ul class="path-modules">
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    Introduction aux cryptomonnaies
+                </li>
+                <li>
+                    <i class="fas fa-lock"></i>
+                    Comprendre la blockchain
+                </li>
+                <li>
+                    <i class="fas fa-lock"></i>
+                    Premiers pas en trading
+                </li>
+            </ul>
+            <a href="#" class="path-button">
+                Commencer le parcours
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- Carte Intermédiaire -->
+        <div class="path-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="path-level">Niveau 2</div>
+            <div class="path-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Intermédiaire</h3>
+            <p>Approfondissez vos connaissances techniques</p>
+            <div class="path-progress">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+                <span>Nécessite niveau 1</span>
+            </div>
+            <ul class="path-modules">
+                <li>
+                    <i class="fas fa-lock"></i>
+                    Analyse technique avancée
+                </li>
+                <li>
+                    <i class="fas fa-lock"></i>
+                    DeFi et yield farming
+                </li>
+                <li>
+                    <i class="fas fa-lock"></i>
+                    NFTs et Web3
+                </li>
+            </ul>
+            <a href="#" class="path-button disabled">
+                Débloquer ce niveau
+                <i class="fas fa-lock"></i>
+            </a>
+        </div>
+
+        <!-- Carte Expert -->
+        <div class="path-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="path-level">Niveau 3</div>
+            <div class="path-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h3>Expert</h3>
+            <p>Maîtrisez les stratégies avancées</p>
+            <div class="path-progress">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+                <span>Nécessite niveau 2</span>
+            </div>
+            <ul class="path-modules">
+                <li>
+                    <i class="fas fa-lock"></i>
+                    Trading algorithmique
+                </li>
+                <li>
+                    <i class="fas fa-lock"></i>
+                    Smart Contracts
+                </li>
+                <li>
+                    <i class="fas fa-lock"></i>
+                    Tokenomics avancée
+                </li>
+            </ul>
+            <a href="#" class="path-button disabled">
+                Débloquer ce niveau
+                <i class="fas fa-lock"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+        <section class="featured-courses">
+    <h2 class="section-title">Cours <span>Populaires</span></h2>
+    <div class="courses-grid">
+        <!-- Cours Bitcoin -->
+        <div class="course-card" data-aos="fade-up">
+            <div class="course-banner">
+                <img src="../img/bitcoin-base.jpg" alt="Bitcoin Basics">
+                <div class="course-overlay">
+                    <span class="course-level">Débutant</span>
+                    <span class="course-rating">
+                        <i class="fas fa-star"></i>
+                        4.8 (1.2k avis)
+                    </span>
+                </div>
+            </div>
+            <div class="course-content">
+                <div class="course-tags">
+                    <span class="tag">Bitcoin</span>
+                    <span class="tag">Blockchain</span>
+                </div>
+                <h3>Les Bases du Bitcoin</h3>
+                <p>Maîtrisez les fondamentaux de la première cryptomonnaie</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 2h de contenu</span>
+                    <span><i class="fas fa-book-reader"></i> 12 leçons</span>
+                    <span><i class="fas fa-user-graduate"></i> 1.2k élèves</span>
+                </div>
+                <div class="course-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <span>0% complété</span>
+                </div>
+                <a href="#" class="course-button">
+                    Commencer le cours
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Cours Trading -->
+        <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="course-banner">
+                <img src="../img/trading-debutant.jpg" alt="Trading Basics">
+                <div class="course-overlay">
+                    <span class="course-level">Intermédiaire</span>
+                    <span class="course-rating">
+                        <i class="fas fa-star"></i>
+                        4.7 (950 avis)
+                    </span>
+                </div>
+            </div>
+            <div class="course-content">
+                <div class="course-tags">
+                    <span class="tag">Trading</span>
+                    <span class="tag">Analyse</span>
+                </div>
+                <h3>Trading pour Débutants</h3>
+                <p>Stratégies essentielles pour débuter en trading</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 3h de contenu</span>
+                    <span><i class="fas fa-book-reader"></i> 15 leçons</span>
+                    <span><i class="fas fa-user-graduate"></i> 950 élèves</span>
+                </div>
+                <div class="course-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <span>Nécessite inscription</span>
+                </div>
+                <a href="#" class="course-button disabled">
+                    S'inscrire pour accéder
+                    <i class="fas fa-lock"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Cours DeFi -->
+        <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="course-banner">
+                <img src="../img/trading-avanced.jpg" alt="DeFi Introduction">
+                <div class="course-overlay">
+                    <span class="course-level">Avancé</span>
+                    <span class="course-rating">
+                        <i class="fas fa-star"></i>
+                        4.9 (750 avis)
+                    </span>
+                </div>
+            </div>
+            <div class="course-content">
+                <div class="course-tags">
+                    <span class="tag">DeFi</span>
+                    <span class="tag">Smart Contracts</span>
+                </div>
+                <h3>Introduction à la DeFi</h3>
+                <p>Explorez l'univers de la finance décentralisée</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 4h de contenu</span>
+                    <span><i class="fas fa-book-reader"></i> 20 leçons</span>
+                    <span><i class="fas fa-user-graduate"></i> 750 élèves</span>
+                </div>
+                <div class="course-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <span>Nécessite niveau intermédiaire</span>
+                </div>
+                <a href="#" class="course-button disabled">
+                    Débloquer ce niveau
+                    <i class="fas fa-lock"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="resources">
+    <h2 class="section-title">Ressources <span>Gratuites</span></h2>
+    <div class="resources-grid">
+        <!-- Guide PDF -->
+        <div class="resource-card" data-aos="fade-up">
+            <div class="resource-icon">
+                <i class="fas fa-book"></i>
+            </div>
+            <h3>Guide du Débutant</h3>
+            <p>Guide complet pour débuter en cryptomonnaies</p>
+            <ul class="resource-features">
+                <li><i class="fas fa-check"></i> 50 pages de contenu</li>
+                <li><i class="fas fa-check"></i> Exemples pratiques</li>
+                <li><i class="fas fa-check"></i> Mises à jour régulières</li>
+            </ul>
+            <a href="#" class="resource-button">
+                <i class="fas fa-download"></i>
+                Télécharger le PDF
+            </a>
+        </div>
+
+        <!-- Vidéos -->
+        <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="resource-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <h3>Tutoriels Vidéo</h3>
+            <p>Série de vidéos explicatives pour tous niveaux</p>
+            <ul class="resource-features">
+                <li><i class="fas fa-check"></i> 20+ tutoriels</li>
+                <li><i class="fas fa-check"></i> Sous-titres disponibles</li>
+                <li><i class="fas fa-check"></i> Exercices pratiques</li>
+            </ul>
+            <a href="#" class="resource-button">
+                <i class="fas fa-play"></i>
+                Voir les vidéos
+            </a>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="resource-icon">
+                <i class="fas fa-newspaper"></i>
+            </div>
+            <h3>Newsletter</h3>
+            <p>Actualités et analyses hebdomadaires</p>
+            <ul class="resource-features">
+                <li><i class="fas fa-check"></i> Analyses de marché</li>
+                <li><i class="fas fa-check"></i> Conseils d'experts</li>
+                <li><i class="fas fa-check"></i> Tendances DeFi</li>
+            </ul>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre email" required>
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i>
+                    S'abonner
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <h2 class="section-title">Questions <span>Fréquentes</span></h2>
+    <div class="faq-container">
+        <div class="faq-item" data-aos="fade-up">
+            <div class="faq-question">
+                <h3>Qu'est-ce qu'une cryptomonnaie ?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Une cryptomonnaie est une forme de monnaie numérique qui utilise la cryptographie pour sécuriser les transactions. Contrairement aux monnaies traditionnelles, elle fonctionne de manière décentralisée, sans l'intervention d'une banque centrale ou d'un gouvernement.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question">
+                <h3>Comment commencer à investir ?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Pour commencer à investir en cryptomonnaies, suivez ces étapes :</p>
+                <ul>
+                    <li>1. Choisissez une plateforme d'échange fiable</li>
+                    <li>2. Créez et vérifiez votre compte</li>
+                    <li>3. Ajoutez des fonds à votre compte</li>
+                    <li>4. Commencez par de petits investissements</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question">
+                <h3>Comment sécuriser ses cryptos ?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>La sécurisation de vos cryptomonnaies est primordiale. Voici les meilleures pratiques :</p>
+                <ul>
+                    <li>Utilisez un portefeuille hardware</li>
+                    <li>Activez l'authentification à deux facteurs</li>
+                    <li>Ne partagez jamais vos clés privées</li>
+                    <li>Faites des sauvegardes régulières</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <footer class="footer">
+    <!-- Vagues animées -->
+    <div class="footer-waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    
+    <!-- Contenu principal du footer -->
+    <div class="footer-content">
+        <!-- Section marque -->
+        <div class="footer-section brand">
+            <h2 class="footer-logo">Crypto<span>Invest</span></h2>
+            <p class="footer-description">
+                Votre partenaire de confiance pour l'investissement en cryptomonnaies. 
+                Découvrez, apprenez et investissez en toute sécurité.
+            </p>
+            <div class="footer-social">
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Section Produits -->
+        <div class="footer-section">
+            <h3>Produits</h3>
+            <ul>
+                <li><a href="pages/market.html">Trading</a></li>
+                <li><a href="pages/portfolio.html">Portfolio</a></li>
+                <li><a href="pages/learn.html">Formation</a></li>
+                <li><a href="#">Pro Trading</a></li>
+            </ul>
+        </div>
+
+        <!-- Section Support -->
+        <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Centre d'aide</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Statut API</a></li>
+                <li><a href="#">Communauté</a></li>
+            </ul>
+        </div>
+
+        <!-- Section Newsletter -->
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p class="newsletter-desc">Restez informé des dernières actualités et opportunités crypto</p>
+            <form class="footer-newsletter">
+                <div class="newsletter-input-group">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@cryptoinvest.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Paris, France</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <div class="footer-bottom-left">
+                <p>&copy; 2024 CryptoInvest. Tous droits réservés.</p>
+            </div>
+            <div class="footer-bottom-right">
+                <a href="#">Mentions légales</a>
+                <a href="#">Confidentialité</a>
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="../js/learn.js"></script>
+    <script src="../js/hambuger.js"></script>
+</body>
+
+</html>

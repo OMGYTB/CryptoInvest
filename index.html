@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoInvest - Votre guide d'investissement en cryptomonnaies</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo (2).ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Crypto<span>Invest</span></h1>
+            </div>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="pages/market.html">Marché</a></li>
+                <li><a href="pages/learn.html">Apprendre</a></li>
+            </ul>
+            <div class="nav-button">
+                <a href="login.html" class="login-btn">Connexion</a>
+                <a href="signup.html" class="sign-btn">Inscription</a>
+            </div>
+        </nav>
+    </header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="glitch" data-text="Investissez dans le futur">Investissez dans le futur</h1>
+        <p class="fade-in">La nouvelle ère de l'investissement digital commence ici</p>
+        <div class="hero-buttons">
+            <a href="pages/learn.html" class="cta-button primary">Démarrer</a>
+            <a href="pages/market.html" class="cta-button secondary">Explorer</a>
+        </div>
+    </div>
+    <div class="hero-particles" id="particles-js"></div>
+</section>
+
+
+
+        <section class="live-prices">
+            <h2>Prix en direct</h2>
+            <div class="crypto-grid" id="crypto-prices">
+                <!-- Les prix seront injectés ici via JavaScript -->
+            </div>
+        </section>
+
+        <section class="features">
+    <h2 class="section-title">Pourquoi choisir <span>CryptoInvest</span> ?</h2>
+    <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up">
+            <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Sécurité maximale</h3>
+            <p>Protection avancée avec technologie blockchain et cryptographie de pointe</p>
+            <div class="feature-hover">
+                <span class="learn-more">En savoir plus</span>
+            </div>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-icon">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <h3>Accès mondial</h3>
+            <p>Investissez depuis n'importe où, 24/7, sans frontières ni limitations</p>
+            <div class="feature-hover">
+                <span class="learn-more">En savoir plus</span>
+            </div>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Croissance optimale</h3>
+            <p>Stratégies d'investissement avancées et opportunités de rendement élevé</p>
+            <div class="feature-hover">
+                <span class="learn-more">En savoir plus</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="getting-started">
+    <h2 class="section-title">Démarrez en <span>3 étapes</span></h2>
+    <div class="steps-grid">
+        <div class="step-card" data-aos="fade-right">
+            <div class="step-icon">
+                <span class="step-number">01</span>
+                <i class="fas fa-book-reader"></i>
+            </div>
+            <h3>Formation</h3>
+            <p>Accédez à nos ressources éducatives complètes sur les cryptomonnaies</p>
+            <a href="#" class="step-link">Commencer l'apprentissage <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="step-card" data-aos="fade-up">
+            <div class="step-icon">
+                <span class="step-number">02</span>
+                <i class="fas fa-coins"></i>
+            </div>
+            <h3>Sélection</h3>
+            <p>Analysez et choisissez vos cryptomonnaies avec nos outils experts</p>
+            <a href="#" class="step-link">Explorer les options <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="step-card" data-aos="fade-left">
+            <div class="step-icon">
+                <span class="step-number">03</span>
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Investissement</h3>
+            <p>Démarrez votre portfolio avec un montant adapté à votre stratégie</p>
+            <a href="#" class="step-link">Créer votre portfolio <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="news">
+    <h2 class="section-title">Actualités <span>Crypto</span></h2>
+    <div class="news-grid" id="crypto-news">
+        <!-- Les actualités seront injectées via JavaScript -->
+    </div>
+    <div class="news-loader">
+        <div class="loader"></div>
+    </div>
+</section>
+
+    <footer class="footer">
+    <div class="footer-waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    
+    <div class="footer-content">
+        <div class="footer-section brand">
+            <h2 class="footer-logo">Crypto<span>Invest</span></h2>
+            <p class="footer-description">
+                Votre partenaire de confiance pour l'investissement en cryptomonnaies. 
+                Sécurité, transparence et innovation.
+            </p>
+            <div class="footer-social">
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="pages/market.html">Marché</a></li>
+                <li><a href="pages/learn.html">Formation</a></li>
+                <li><a href="pages/portfolio.html">Portfolio</a></li>
+                <li><a href="pages/news.html">Actualités</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Ressources</h3>
+            <ul>
+                <li><a href="#">Centre d'aide</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">API</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@cryptoinvest.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+33 1 23 45 67 89</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Paris, France</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2024 CryptoInvest. Tous droits réservés.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Conditions d'utilisation</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/hambuger.js"></script>
+
+</body>
+</html>
