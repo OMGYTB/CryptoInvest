@@ -9,9 +9,74 @@
     <link rel="stylesheet" href="../css/learn.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="shortcut icon" href="img/logo (2).ico" type="image/x-icon">
+    <style>
+        .premium-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, var(--accent-color), #4facfe);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+        
+        .membership-banner {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .membership-banner-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .membership-banner h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .membership-banner p {
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+        
+        .membership-banner-button {
+            background: linear-gradient(45deg, var(--accent-color), #4facfe);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1rem;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .membership-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .membership-banner-button {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body data-learn-page>
     <header>
         <nav>
             <div class="logo">
@@ -47,6 +112,17 @@
         </div>
     </div>
 </section>
+
+<!-- Bannière d'abonnement -->
+<div class="membership-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    <div class="membership-banner">
+        <div class="membership-banner-content">
+            <h3>Débloquez tout le contenu premium</h3>
+            <p>Passez à un abonnement payant pour accéder à tous nos cours et formations exclusives.</p>
+        </div>
+        <a href="membership.html" class="membership-banner-button">Voir les abonnements</a>
+    </div>
+</div>
 
 <section class="learning-paths">
     <h2 class="section-title">Parcours <span>d'Apprentissage</span></h2>
@@ -160,7 +236,7 @@
     <h2 class="section-title">Cours <span>Populaires</span></h2>
     <div class="courses-grid">
         <!-- Cours Bitcoin -->
-        <div class="course-card" data-aos="fade-up">
+        <div class="course-card" data-aos="fade-up" data-course-id="bitcoin-basics">
             <div class="course-banner">
                 <img src="../img/bitcoin-base.jpg" alt="Bitcoin Basics">
                 <div class="course-overlay">
@@ -197,7 +273,8 @@
         </div>
 
         <!-- Cours Trading -->
-        <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="course-card" data-aos="fade-up" data-aos-delay="100" data-course-id="trading-beginners">
+            <div class="premium-badge">Basic</div>
             <div class="course-banner">
                 <img src="../img/trading-debutant.jpg" alt="Trading Basics">
                 <div class="course-overlay">
@@ -234,7 +311,8 @@
         </div>
 
         <!-- Cours DeFi -->
-        <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="course-card" data-aos="fade-up" data-aos-delay="200" data-course-id="defi-introduction">
+            <div class="premium-badge">Premium</div>
             <div class="course-banner">
                 <img src="../img/trading-avanced.jpg" alt="DeFi Introduction">
                 <div class="course-overlay">
@@ -480,8 +558,52 @@
 </footer>
 
 
+    <script src="../js/auth.js"></script>
     <script src="../js/learn.js"></script>
     <script src="../js/hambuger.js"></script>
+    <script src="../js/membership-access.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const auth = window.CryptoInvestAuth;
+            const membershipBanner = document.querySelector('.membership-banner');
+            
+            if (auth && auth.isAuthenticated()) {
+                const user = auth.getCurrentUser();
+                
+                // Update membership banner based on user's membership level
+                if (membershipBanner) {
+                    const membershipLevel = user.membershipLevel;
+                    const bannerTitle = membershipBanner.querySelector('h3');
+                    const bannerText = membershipBanner.querySelector('p');
+                    const bannerButton = membershipBanner.querySelector('a');
+                    
+                    if (membershipLevel === 'free') {
+                        bannerTitle.textContent = 'Débloquez tout le contenu premium';
+                        bannerText.textContent = 'Passez à un abonnement payant pour accéder à tous nos cours et formations exclusives.';
+                        bannerButton.textContent = 'Voir les abonnements';
+                    } else {
+                        const membershipName = membershipLevel.charAt(0).toUpperCase() + membershipLevel.slice(1);
+                        bannerTitle.textContent = `Abonnement ${membershipName} actif`;
+                        
+                        if (membershipLevel === 'pro') {
+                            bannerText.textContent = 'Vous avez accès à tout le contenu premium. Profitez de votre apprentissage !';
+                            bannerButton.textContent = 'Gérer mon abonnement';
+                        } else {
+                            bannerText.textContent = 'Vous avez accès au contenu de votre niveau. Passez à un niveau supérieur pour débloquer plus de formations.';
+                            bannerButton.textContent = 'Améliorer mon abonnement';
+                        }
+                    }
+                }
+            } else if (membershipBanner) {
+                // User is not logged in
+                membershipBanner.querySelector('h3').textContent = 'Connectez-vous pour suivre votre progression';
+                membershipBanner.querySelector('p').textContent = 'Créez un compte gratuit pour accéder aux cours de base et suivre votre progression.';
+                membershipBanner.querySelector('a').textContent = 'Se connecter';
+                membershipBanner.querySelector('a').href = 'login.html';
+            }
+        });
+    </script>
 </body>
 
 </html>

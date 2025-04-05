@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/logo (2).ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logo (2).ico" type="image/x-icon">
 </head>
 
 <body>
@@ -38,7 +38,9 @@
         <div class="signup-container" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 3rem; width: 100%; max-width: 500px;">
             <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem; background: linear-gradient(45deg, var(--accent-color), #4facfe); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Créer un compte</h2>
             
-            <form class="signup-form">
+            <div id="signup-alert" class="alert"></div>
+            
+            <form id="signup-form" class="signup-form">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
                     <div class="form-group">
                         <label for="firstname" style="display: block; margin-bottom: 0.5rem; color: var(--text-color);">Prénom</label>
@@ -73,7 +75,7 @@
                     </label>
                 </div>
                 
-                <button type="submit" style="width: 100%; padding: 1rem; border: none; border-radius: 8px; background: linear-gradient(45deg, var(--accent-color), #4facfe); color: var(--primary-color); font-weight: 600; cursor: pointer; transition: transform 0.3s ease;">Créer un compte</button>
+                <button type="submit" id="signup-button" style="width: 100%; padding: 1rem; border: none; border-radius: 8px; background: linear-gradient(45deg, var(--accent-color), #4facfe); color: var(--primary-color); font-weight: 600; cursor: pointer; transition: transform 0.3s ease;">Créer un compte</button>
             </form>
             
             <div class="social-signup" style="margin-top: 2rem; text-align: center;">
@@ -166,6 +168,84 @@
     </footer>
 
     <script src="../js/hambuger.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signupForm = document.getElementById('signup-form');
+            const signupButton = document.getElementById('signup-button');
+            const alertBox = document.getElementById('signup-alert');
+            
+            // Show alert message
+            function showAlert(message, type) {
+                alertBox.textContent = message;
+                alertBox.className = `alert alert-${type}`;
+                alertBox.style.display = 'block';
+                
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    alertBox.style.display = 'none';
+                }, 5000);
+            }
+            
+            // Validate password match
+            function validatePasswordMatch() {
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+                
+                if (password !== confirmPassword) {
+                    showAlert('Les mots de passe ne correspondent pas', 'error');
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            // Handle form submission
+            signupForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Validate password match
+                if (!validatePasswordMatch()) {
+                    return;
+                }
+                
+                // Get form data
+                const userData = {
+                    firstName: document.getElementById('firstname').value,
+                    lastName: document.getElementById('lastname').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value
+                };
+                
+                // Disable button during registration
+                signupButton.disabled = true;
+                signupButton.textContent = 'Création du compte...';
+                
+                try {
+                    // Attempt registration
+                    await CryptoInvestAuth.register(userData);
+                    
+                    // Show success message
+                    showAlert('Compte créé avec succès! Connexion en cours...', 'success');
+                    
+                    // Log in the user
+                    await CryptoInvestAuth.login(userData.email, userData.password);
+                    
+                    // Redirect to dashboard
+                    setTimeout(() => {
+                        window.location.href = 'portfolio.html';
+                    }, 1500);
+                } catch (error) {
+                    // Show error message
+                    showAlert(error.message || 'Erreur lors de la création du compte', 'error');
+                    
+                    // Re-enable button
+                    signupButton.disabled = false;
+                    signupButton.textContent = 'Créer un compte';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

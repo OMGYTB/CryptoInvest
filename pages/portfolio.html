@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Portfolio - CryptoInvest</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/logo (2).ico" type="image/x-icon">
+</head>
+
+<body data-require-auth="true">
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Crypto<span>Invest</span></h1>
+            </div>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="market.html">Marché</a></li>
+                <li><a href="learn.html">Apprendre</a></li>
+            </ul>
+            <div class="nav-button">
+                <a href="login.html" class="login-btn">Connexion</a>
+                <a href="signup.html" class="sign-btn">Inscription</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3>Jean Dupont</h3>
+                        <p>jean.dupont@example.com</p>
+                    </div>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#dashboard" class="active" data-section="dashboard-overview"><i class="fas fa-chart-line"></i> Tableau de bord</a></li>
+                <li><a href="#portfolio" data-section="portfolio-section"><i class="fas fa-wallet"></i> Mon Portfolio</a></li>
+                <li><a href="#transactions" data-section="transactions-section"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+                <li><a href="#settings" data-section="settings-section"><i class="fas fa-cog"></i> Paramètres</a></li>
+                <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Overview Section -->
+            <section id="dashboard-overview" class="dashboard-content-section active">
+                <div class="dashboard-header">
+                    <h2 class="dashboard-title">Tableau de bord</h2>
+                    <div class="dashboard-actions">
+                        <button class="dashboard-btn secondary">
+                            <i class="fas fa-download"></i> Exporter
+                        </button>
+                        <button class="dashboard-btn primary">
+                            <i class="fas fa-plus"></i> Ajouter des fonds
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Valeur totale</h3>
+                            <div class="card-icon">
+                                <i class="fas fa-euro-sign"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">€12,456.78</div>
+                        <div class="card-change positive-change">
+                            <i class="fas fa-arrow-up"></i> +5.23% depuis hier
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Profit/Perte</h3>
+                            <div class="card-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">€1,245.30</div>
+                        <div class="card-change positive-change">
+                            <i class="fas fa-arrow-up"></i> +12.7% au total
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Actifs</h3>
+                            <div class="card-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">8</div>
+                        <div class="card-change">
+                            <i class="fas fa-plus"></i> 2 ce mois-ci
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Transactions</h3>
+                            <div class="card-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">24</div>
+                        <div class="card-change">
+                            <i class="fas fa-calendar"></i> 5 cette semaine
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Mon Portfolio</h3>
+                        <a href="#" class="section-action">Voir tout <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <table class="portfolio-table">
+                        <thead>
+                            <tr>
+                                <th>Actif</th>
+                                <th>Quantité</th>
+                                <th>Prix</th>
+                                <th>Valeur</th>
+                                <th>Évolution 24h</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="coin-info">
+                                        <div class="coin-icon">BTC</div>
+                                        <div>
+                                            <div class="coin-name">Bitcoin</div>
+                                            <div class="coin-symbol">BTC</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>0.45</td>
+                                <td>€42,500.00</td>
+                                <td>€19,125.00</td>
+                                <td class="positive-change">+2.3%</td>
+                                <td>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="coin-info">
+                                        <div class="coin-icon">ETH</div>
+                                        <div>
+                                            <div class="coin-name">Ethereum</div>
+                                            <div class="coin-symbol">ETH</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>3.2</td>
+                                <td>€2,800.00</td>
+                                <td>€8,960.00</td>
+                                <td class="negative-change">-1.5%</td>
+                                <td>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="coin-info">
+                                        <div class="coin-icon">SOL</div>
+                                        <div>
+                                            <div class="coin-name">Solana</div>
+                                            <div class="coin-symbol">SOL</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>25</td>
+                                <td>€120.00</td>
+                                <td>€3,000.00</td>
+                                <td class="positive-change">+5.7%</td>
+                                <td>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="transactions-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Transactions récentes</h3>
+                        <a href="#" class="section-action">Voir tout <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Actif</th>
+                                <th>Montant</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>04/04/2025</td>
+                                <td>Achat</td>
+                                <td>
+                                    <div class="coin-info">
+                                        <div class="coin-icon">BTC</div>
+                                        <div class="coin-name">Bitcoin</div>
+                                    </div>
+                                </td>
+                                <td>€2,500.00</td>
+                                <td><span class="transaction-status status-completed">Complété</span></td>
+                            </tr>
+                            <tr>
+                                <td>02/04/2025</td>
+                                <td>Vente</td>
+                                <td>
+                                    <div class="coin-info">
+                                        <div class="coin-icon">ETH</div>
+                                        <div class="coin-name">Ethereum</div>
+                                    </div>
+                                </td>
+                                <td>€1,200.00</td>
+                                <td><span class="transaction-status status-completed">Complété</span></td>
+                            </tr>
+                            <tr>
+                                <td>01/04/2025</td>
+                                <td>Achat</td>
+                                <td>
+                                    <div class="coin-info">
+                                        <div class="coin-icon">SOL</div>
+                                        <div class="coin-name">Solana</div>
+                                    </div>
+                                </td>
+                                <td>€800.00</td>
+                                <td><span class="transaction-status status-pending">En attente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="portfolio-section" class="dashboard-content-section">
+                <div class="dashboard-header">
+                    <h2 class="dashboard-title">Mon Portfolio</h2>
+                    <div class="dashboard-actions">
+                        <button class="dashboard-btn secondary">
+                            <i class="fas fa-filter"></i> Filtrer
+                        </button>
+                        <button class="dashboard-btn primary">
+                            <i class="fas fa-plus"></i> Ajouter un actif
+                        </button>
+                    </div>
+                </div>
+
+                <table class="portfolio-table">
+                    <thead>
+                        <tr>
+                            <th>Actif</th>
+                            <th>Quantité</th>
+                            <th>Prix d'achat moyen</th>
+                            <th>Prix actuel</th>
+                            <th>Valeur</th>
+                            <th>Profit/Perte</th>
+                            <th>Évolution 24h</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">BTC</div>
+                                    <div>
+                                        <div class="coin-name">Bitcoin</div>
+                                        <div class="coin-symbol">BTC</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>0.45</td>
+                            <td>€38,500.00</td>
+                            <td>€42,500.00</td>
+                            <td>€19,125.00</td>
+                            <td class="positive-change">+€1,800.00 (10.4%)</td>
+                            <td class="positive-change">+2.3%</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">ETH</div>
+                                    <div>
+                                        <div class="coin-name">Ethereum</div>
+                                        <div class="coin-symbol">ETH</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>3.2</td>
+                            <td>€2,600.00</td>
+                            <td>€2,800.00</td>
+                            <td>€8,960.00</td>
+                            <td class="positive-change">+€640.00 (7.7%)</td>
+                            <td class="negative-change">-1.5%</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">SOL</div>
+                                    <div>
+                                        <div class="coin-name">Solana</div>
+                                        <div class="coin-symbol">SOL</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>25</td>
+                            <td>€95.00</td>
+                            <td>€120.00</td>
+                            <td>€3,000.00</td>
+                            <td class="positive-change">+€625.00 (26.3%)</td>
+                            <td class="positive-change">+5.7%</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">ADA</div>
+                                    <div>
+                                        <div class="coin-name">Cardano</div>
+                                        <div class="coin-symbol">ADA</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>1500</td>
+                            <td>€0.45</td>
+                            <td>€0.52</td>
+                            <td>€780.00</td>
+                            <td class="positive-change">+€105.00 (15.6%)</td>
+                            <td class="positive-change">+3.2%</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">DOT</div>
+                                    <div>
+                                        <div class="coin-name">Polkadot</div>
+                                        <div class="coin-symbol">DOT</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>€12.30</td>
+                            <td>€11.80</td>
+                            <td>€1,180.00</td>
+                            <td class="negative-change">-€50.00 (-4.1%)</td>
+                            <td class="negative-change">-2.1%</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button class="dashboard-btn secondary" style="padding: 0.5rem; font-size: 0.8rem;">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Transactions Section -->
+            <section id="transactions-section" class="dashboard-content-section">
+                <div class="dashboard-header">
+                    <h2 class="dashboard-title">Historique des transactions</h2>
+                    <div class="dashboard-actions">
+                        <button class="dashboard-btn secondary">
+                            <i class="fas fa-filter"></i> Filtrer
+                        </button>
+                        <button class="dashboard-btn primary">
+                            <i class="fas fa-plus"></i> Nouvelle transaction
+                        </button>
+                    </div>
+                </div>
+
+                <table class="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Actif</th>
+                            <th>Quantité</th>
+                            <th>Prix unitaire</th>
+                            <th>Montant total</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>04/04/2025 14:32</td>
+                            <td>Achat</td>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">BTC</div>
+                                    <div class="coin-name">Bitcoin</div>
+                                </div>
+                            </td>
+                            <td>0.05</td>
+                            <td>€42,500.00</td>
+                            <td>€2,125.00</td>
+                            <td><span class="transaction-status status-completed">Complété</span></td>
+                        </tr>
+                        <tr>
+                            <td>02/04/2025 09:15</td>
+                            <td>Vente</td>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">ETH</div>
+                                    <div class="coin-name">Ethereum</div>
+                                </div>
+                            </td>
+                            <td>0.5</td>
+                            <td>€2,800.00</td>
+                            <td>€1,400.00</td>
+                            <td><span class="transaction-status status-completed">Complété</span></td>
+                        </tr>
+                        <tr>
+                            <td>01/04/2025 18:45</td>
+                            <td>Achat</td>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">SOL</div>
+                                    <div class="coin-name">Solana</div>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>€118.00</td>
+                            <td>€1,180.00</td>
+                            <td><span class="transaction-status status-pending">En attente</span></td>
+                        </tr>
+                        <tr>
+                            <td>28/03/2025 11:20</td>
+                            <td>Achat</td>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">ADA</div>
+                                    <div class="coin-name">Cardano</div>
+                                </div>
+                            </td>
+                            <td>500</td>
+                            <td>€0.48</td>
+                            <td>€240.00</td>
+                            <td><span class="transaction-status status-completed">Complété</span></td>
+                        </tr>
+                        <tr>
+                            <td>25/03/2025 15:10</td>
+                            <td>Vente</td>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">DOT</div>
+                                    <div class="coin-name">Polkadot</div>
+                                </div>
+                            </td>
+                            <td>20</td>
+                            <td>€12.50</td>
+                            <td>€250.00</td>
+                            <td><span class="transaction-status status-completed">Complété</span></td>
+                        </tr>
+                        <tr>
+                            <td>22/03/2025 09:30</td>
+                            <td>Achat</td>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">BTC</div>
+                                    <div class="coin-name">Bitcoin</div>
+                                </div>
+                            </td>
+                            <td>0.02</td>
+                            <td>€41,200.00</td>
+                            <td>€824.00</td>
+                            <td><span class="transaction-status status-failed">Échoué</span></td>
+                        </tr>
+                        <tr>
+                            <td>20/03/2025 14:25</td>
+                            <td>Achat</td>
+                            <td>
+                                <div class="coin-info">
+                                    <div class="coin-icon">ETH</div>
+                                    <div class="coin-name">Ethereum</div>
+                                </div>
+                            </td>
+                            <td>1.5</td>
+                            <td>€2,650.00</td>
+                            <td>€3,975.00</td>
+                            <td><span class="transaction-status status-completed">Complété</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="dashboard-content-section">
+                <div class="dashboard-header">
+                    <h2 class="dashboard-title">Paramètres du compte</h2>
+                    <div class="dashboard-actions">
+                        <button class="dashboard-btn primary">
+                            <i class="fas fa-save"></i> Enregistrer les modifications
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>Informations personnelles</h3>
+                        <p>Mettez à jour vos informations personnelles</p>
+                        
+                        <div class="form-group">
+                            <label for="fullname">Nom complet</label>
+                            <input type="text" id="fullname" value="Jean Dupont">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="jean.dupont@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" value="+33 6 12 34 56 78">
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Sécurité</h3>
+                        <p>Gérez vos paramètres de sécurité</p>
+                        
+                        <div class="form-group">
+                            <label for="current-password">Mot de passe actuel</label>
+                            <input type="password" id="current-password">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="new-password">Nouveau mot de passe</label>
+                            <input type="password" id="new-password">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmer le mot de passe</label>
+                            <input type="password" id="confirm-password">
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Authentification à deux facteurs</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Préférences</h3>
+                        <p>Personnalisez votre expérience</p>
+                        
+                        <div class="form-group">
+                            <label for="language">Langue</label>
+                            <select id="language">
+                                <option value="fr" selected>Français</option>
+                                <option value="en">English</option>
+                                <option value="es">Español</option>
+                                <option value="de">Deutsch</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="currency">Devise</label>
+                            <select id="currency">
+                                <option value="eur" selected>Euro (€)</option>
+                                <option value="usd">US Dollar ($)</option>
+                                <option value="gbp">British Pound (£)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Notifications par email</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Notifications push</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Mode sombre</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Notifications</h3>
+                        <p>Gérez vos préférences de notifications</p>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Alertes de prix</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Confirmation de transaction</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Actualités du marché</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Mises à jour de la plateforme</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <span class="toggle-label">Conseils d'investissement</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Mobile Tab Navigation -->
+    <nav class="tab-navigation">
+        <ul class="tab-menu">
+            <li><a href="#dashboard" class="active" data-section="dashboard-overview"><i class="fas fa-chart-line"></i> Tableau</a></li>
+            <li><a href="#portfolio" data-section="portfolio-section"><i class="fas fa-wallet"></i> Portfolio</a></li>
+            <li><a href="#transactions" data-section="transactions-section"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+            <li><a href="#settings" data-section="settings-section"><i class="fas fa-cog"></i> Paramètres</a></li>
+        </ul>
+    </nav>
+
+    <footer class="footer">
+        <div class="footer-waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <h2 class="footer-logo">Crypto<span>Invest</span></h2>
+                <p class="footer-description">
+                    Votre partenaire de confiance pour l'investissement en cryptomonnaies. 
+                    Sécurité, transparence et innovation.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="market.html">Marché</a></li>
+                    <li><a href="learn.html">Formation</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="news.html">Actualités</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Ressources</h3>
+                <ul>
+                    <li><a href="#">Centre d'aide</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">API</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@cryptoinvest.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+33 1 23 45 67 89</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Paris, France</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 CryptoInvest. Tous droits réservés.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/hambuger.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab navigation
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a[data-section]');
+            const tabLinks = document.querySelectorAll('.tab-menu a[data-section]');
+            const contentSections = document.querySelectorAll('.dashboard-content-section');
+
+            function setActiveSection(sectionId) {
+                // Hide all sections
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Show the selected section
+                document.getElementById(sectionId).classList.add('active');
+
+                // Update sidebar active link
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Update tab menu active link
+                tabLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Add click event to sidebar links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    setActiveSection(sectionId);
+                });
+            });
+
+            // Add click event to tab links
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    setActiveSection(sectionId);
+                });
+            });
+
+            // Mobile menu toggle
+            const burger = document.querySelector('.burger');
+            const sidebar = document.querySelector('.sidebar');
+            
+            burger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    if (!sidebar.contains(e.target) && !burger.contains(e.target) && sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                        burger.classList.remove('active');
+                    }
+                }
+            });
+
+            // Check if user is logged in using the auth service
+            const isLoggedIn = CryptoInvestAuth.isAuthenticated();
+
+            // Get current user if authenticated
+            const currentUser = CryptoInvestAuth.getCurrentUser();
+            
+            // Update UI based on login status
+            const navButtons = document.querySelector('.nav-button');
+            if (isLoggedIn && currentUser) {
+                // If logged in, show user menu instead of login/signup buttons
+                navButtons.innerHTML = `
+                    <a href="portfolio.html" class="login-btn">Mon compte</a>
+                    <a href="#" class="sign-btn logout-btn">Déconnexion</a>
+                `;
+                
+                // Add logout functionality
+                const logoutBtn = document.querySelector('.logout-btn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        CryptoInvestAuth.logout();
+                    });
+                }
+                
+                // Update user info in dashboard
+                const userNameElement = document.querySelector('.user-details h3');
+                const userEmailElement = document.querySelector('.user-details p');
+                
+                if (userNameElement) {
+                    userNameElement.textContent = currentUser.getFullName();
+                }
+                
+                if (userEmailElement) {
+                    userEmailElement.textContent = currentUser.email;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

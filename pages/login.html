@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/logo (2).ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logo (2).ico" type="image/x-icon">
 </head>
 
 <body>
@@ -39,7 +39,9 @@
         <div class="login-container" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 3rem; width: 100%; max-width: 400px;">
             <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem; background: linear-gradient(45deg, var(--accent-color), #4facfe); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Connexion</h2>
             
-            <form class="login-form">
+            <div id="login-alert" class="alert"></div>
+            
+            <form id="login-form" class="login-form">
                 <div class="form-group" style="margin-bottom: 1.5rem;">
                     <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--text-color);">Email</label>
                     <input type="email" id="email" required style="width: 100%; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-color);">
@@ -57,7 +59,7 @@
                     <a href="#" style="color: var(--accent-color); text-decoration: none;">Mot de passe oublié ?</a>
                 </div>
                 
-                <button type="submit" style="width: 100%; padding: 1rem; border: none; border-radius: 8px; background: linear-gradient(45deg, var(--accent-color), #4facfe); color: var(--primary-color); font-weight: 600; cursor: pointer; transition: transform 0.3s ease;">Se connecter</button>
+                <button type="submit" id="login-button" style="width: 100%; padding: 1rem; border: none; border-radius: 8px; background: linear-gradient(45deg, var(--accent-color), #4facfe); color: var(--primary-color); font-weight: 600; cursor: pointer; transition: transform 0.3s ease;">Se connecter</button>
             </form>
             
             <div class="social-login" style="margin-top: 2rem; text-align: center;">
@@ -148,5 +150,58 @@
     </footer>
 
     <script src="../js/hambuger.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('login-form');
+            const loginButton = document.getElementById('login-button');
+            const alertBox = document.getElementById('login-alert');
+            
+            // Show alert message
+            function showAlert(message, type) {
+                alertBox.textContent = message;
+                alertBox.className = `alert alert-${type}`;
+                alertBox.style.display = 'block';
+                
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    alertBox.style.display = 'none';
+                }, 5000);
+            }
+            
+            // Handle form submission
+            loginForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // Disable button during login
+                loginButton.disabled = true;
+                loginButton.textContent = 'Connexion en cours...';
+                
+                try {
+                    // Attempt login
+                    await CryptoInvestAuth.login(email, password);
+                    
+                    // Show success message
+                    showAlert('Connexion réussie! Redirection...', 'success');
+                    
+                    // Redirect to dashboard
+                    setTimeout(() => {
+                        window.location.href = 'portfolio.html';
+                    }, 1000);
+                } catch (error) {
+                    // Show error message
+                    showAlert(error.message || 'Erreur de connexion', 'error');
+                    
+                    // Re-enable button
+                    loginButton.disabled = false;
+                    loginButton.textContent = 'Se connecter';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
