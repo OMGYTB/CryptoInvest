@@ -113,6 +113,25 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
 }
 
+.membership-btn {
+    background: transparent;
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--primary-color), var(--primary-color)) padding-box,
+                linear-gradient(45deg, var(--accent-color), #4facfe) border-box;
+    margin-left: 1rem;
+}
+
+.membership-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,242, 254, 0.2);
+}
+
 /* Ajoutez ces styles pour le menu burger */
 .burger {
     display: none;
@@ -2684,3 +2703,59 @@ input:checked + .toggle-slider:before {
     border: 1px solid rgba(0, 242, 166, 0.3);
     color: #00f2a6;
 }
+
+#language {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 1em;
+    appearance: none; /* Supprime le style par défaut du navigateur */
+    -webkit-appearance: none; /* Pour Safari */
+    -moz-appearance: none; /* Pour Firefox */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%2300f2fe' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"); /* Ajoute une flèche personnalisée */
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    padding-right: 2em; /* Espace pour la flèche */
+  }
+
+  #language:focus {
+    border-color: var(--accent-color);
+    outline: none; /* Supprime l'outline par défaut au focus */
+    box-shadow: 0 0 5px var(--accent-color); /* Ajoute une ombre au focus */
+  }
+
+  #language option {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+
+  #currency {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 1em;
+    appearance: none; /* Supprime le style par défaut du navigateur */
+    -webkit-appearance: none; /* Pour Safari */
+    -moz-appearance: none; /* Pour Firefox */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%2300f2fe' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"); /* Ajoute une flèche personnalisée */
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    padding-right: 2em; /* Espace pour la flèche */
+  }
+
+  #currency:focus {
+    border-color: var(--accent-color);
+    outline: none; /* Supprime l'outline par défaut au focus */
+    box-shadow: 0 0 5px var(--accent-color); /* Ajoute une ombre au focus */
+  }
+
+  #currency option {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }

@@ -29,7 +29,7 @@
                 <li><a href="pages/learn.html">Apprendre</a></li>
             </ul>
             <div class="nav-button">
-                <a href="pages/login.html" class="login-btn">Connexion</a>
+                <a href="pages/login.html" class="login-btn">Se connecter</a>
                 <a href="pages/signup.html" class="sign-btn">Inscription</a>
             </div>
         </nav>
@@ -222,6 +222,44 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/hambuger.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      // Fonction pour vérifier si l'utilisateur est connecté (exemple)
+      function estUtilisateurConnecte() {
+        // Ici, vous devriez avoir votre propre logique pour vérifier si l'utilisateur est connecté.
+        // Cela pourrait impliquer de vérifier la présence d'un cookie, d'un token dans le localStorage, etc.
+        // Pour cet exemple, nous allons simplement retourner une valeur aléatoire.
+        return Math.random() < 0.5; // 50% de chance d'être connecté pour l'exemple
+      }
+
+      // Fonction pour modifier la navigation
+      function modifierNavigation() {
+        const navButton = document.querySelector('.nav-button');
+
+        if (navButton) {
+          if (estUtilisateurConnecte()) {
+            // L'utilisateur est connecté, on modifie la navigation
+            navButton.innerHTML = `
+              <a href="login.html" class="login-btn">Mon compte</a>
+              <a href="membership.html" class="membership-btn">Abonnement</a>
+              <a href="signup.html" class="sign-btn">Déconnexion</a>
+            `;
+          } else {
+            // L'utilisateur n'est pas connecté, on remet la navigation par défaut (exemple)
+            navButton.innerHTML = `
+              <a href="portfolio.html" class="login-btn">Se connecter</a>
+              <a href="signup.html" class="sign-btn">S'inscrire</a>
+            `;
+          }
+        } else {
+          console.error("L'élément .nav-button n'a pas été trouvé.");
+        }
+      }
+
+      // Appeler la fonction pour modifier la navigation au chargement de la page
+      modifierNavigation();
+    });
+    </script>
 
 </body>
 </html>

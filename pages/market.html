@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/market.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="shortcut icon" href="img/logo (2).ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logo (2).ico" type="image/x-icon">
 </head>
 
 <body>
@@ -241,6 +241,45 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/market.js"></script>
     <script src="../js/hambuger.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      // Fonction pour vérifier si l'utilisateur est connecté (exemple)
+      function estUtilisateurConnecte() {
+        // Ici, vous devriez avoir votre propre logique pour vérifier si l'utilisateur est connecté.
+        // Cela pourrait impliquer de vérifier la présence d'un cookie, d'un token dans le localStorage, etc.
+        // Pour cet exemple, nous allons simplement retourner une valeur aléatoire.
+        return Math.random() < 0.5; // 50% de chance d'être connecté pour l'exemple
+      }
+
+      // Fonction pour modifier la navigation
+      function modifierNavigation() {
+        const navButton = document.querySelector('.nav-button');
+
+        if (navButton) {
+          if (estUtilisateurConnecte()) {
+            // L'utilisateur est connecté, on modifie la navigation
+            navButton.innerHTML = `
+              <a href="login.html" class="login-btn">Mon compte</a>
+              <a href="membership.html" class="membership-btn">Abonnement</a>
+              <a href="signup.html" class="sign-btn">Déconnexion</a>
+            `;
+          } else {
+            // L'utilisateur n'est pas connecté, on remet la navigation par défaut (exemple)
+            navButton.innerHTML = `
+              <a href="portfolio.html" class="login-btn">Se connecter</a>
+              <a href="signup.html" class="sign-btn">S'inscrire</a>
+            `;
+          }
+        } else {
+          console.error("L'élément .nav-button n'a pas été trouvé.");
+        }
+      }
+
+      // Appeler la fonction pour modifier la navigation au chargement de la page
+      modifierNavigation();
+    });
+    </script>
 </body>
 
 </html>
