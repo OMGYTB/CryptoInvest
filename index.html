@@ -125,13 +125,18 @@
     </div>
 </section>
 
-<section class="news">
-    <h2 class="section-title">Actualités <span>Crypto</span></h2>
-    <div class="news-grid" id="crypto-news">
-        <!-- Les actualités seront injectées via JavaScript -->
+<section class="news-section">
+    <h2>Dernières Nouvelles</h2>
+    <div class="news-controls">
+        <select id="news-category">
+            <option value="crypto">Crypto</option>
+            <option value="blockchain">Blockchain</option>
+            <option value="bitcoin">Bitcoin</option>
+            <!-- Ajoutez d'autres catégories si nécessaire -->
+        </select>
     </div>
-    <div class="news-loader">
-        <div class="loader"></div>
+    <div id="news-container">
+        <!-- News injectées via JavaScript -->
     </div>
 </section>
 
@@ -222,6 +227,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/hambuger.js"></script>
+    <script src="js/news-crypto.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
       // Fonction pour vérifier si l'utilisateur est connecté (exemple)
