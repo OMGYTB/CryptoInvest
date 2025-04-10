@@ -116,11 +116,11 @@
             <div class="charts-container">
                 <div class="chart-card">
                     <h3>Dominance des Cryptomonnaies</h3>
-                    <canvas id="dominance-chart"></canvas>
+                    <canvas id="dominance-chart" width="400" height="200"></canvas>
                 </div>
                 <div class="chart-card">
                     <h3>Volume Global</h3>
-                    <canvas id="volume-chart"></canvas>
+                    <canvas id="volume-chart" width="400" height="200"></canvas>
                 </div>
             </div>
         </section>
@@ -241,6 +241,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/market.js"></script>
     <script src="../js/hambuger.js"></script>
+    <script src="../js/dominance-chart.js"></script>
+    <script src="../js/volume-chart.js"></script>
+    <script src="../js/heatmap.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -260,14 +263,14 @@
           if (estUtilisateurConnecte()) {
             // L'utilisateur est connecté, on modifie la navigation
             navButton.innerHTML = `
-              <a href="login.html" class="login-btn">Mon compte</a>
+              <a href="portfolio.html" class="login-btn">Mon compte</a>
               <a href="membership.html" class="membership-btn">Abonnement</a>
-              <a href="signup.html" class="sign-btn">Déconnexion</a>
+              <a href="index.html" class="sign-btn">Déconnexion</a>
             `;
           } else {
             // L'utilisateur n'est pas connecté, on remet la navigation par défaut (exemple)
             navButton.innerHTML = `
-              <a href="portfolio.html" class="login-btn">Se connecter</a>
+              <a href="login.html" class="login-btn">Se connecter</a>
               <a href="signup.html" class="sign-btn">S'inscrire</a>
             `;
           }
